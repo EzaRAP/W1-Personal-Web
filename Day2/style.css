@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    font-size: 18px;
+}
+
+.nav-link a {
+    color: black;
+    text-decoration: none;
+}
+
+.btn-contact {
+    background-color: darkblue;
+    color: white;
+    padding: 5px;
+    width: 75px;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* .card-style {
+    style="display: grid; 
+ align-items: center;
+    margin: 200px;
+    width: 100px; */
+
+}
+
+.profile-card {
+    width: 100px;
+    border-radius: 24px;
+    background-color: aqua;
+    box-shadow: 0px 5px 10 px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: end;
+}
+
+.media-btn .link {
+    text-decoration: none;
+    background-color: black;
+    margin: 0px 8px;
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}

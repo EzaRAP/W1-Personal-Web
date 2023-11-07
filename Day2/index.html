@@ -1,66 +1,107 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>Personal Web</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="index.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar and Card</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
     <nav style="background-color: #f4f3f3; height: 75px;">
-        <div style="display: flex; align-items: center; height: 100%; margin-left: 30px; margin-right: 30px;">
-            <ul style="display: flex; list-style-type: none; gap: 50px; align-items: center;">
+        <div style="display: flex; align-items: center; height: 100%; margin-left: 40px; margin-right: 40px; ">
+            <ul style="display: flex; align-items:center; list-style-type: none; gap: 50px;">
                 <li>
-                    <img src="assets/image/dumbways.png" style="height: 50px;" />
+                    <img src="brandred.png" alt="Dumbways" style="height: 50px; ">
                 </li>
                 <li class="nav-link">
-                    <a href="index.html">
-                        Home
-                    </a>
+                    <a href="project-day2.html">Home</a>
                 </li>
                 <li class="nav-link">
-                    <a href="blog.html">
-                        Blog
-                    </a>
+                    <a href="">My Project</a>
                 </li>
             </ul>
-            <div style="display: flex; width: 100%; justify-content: end;">
-                <a href="contact.html" class="btn-contact">Contact me</a>
+            <div style="display: flex; justify-content: end; width: 75%;">
+                <a href="contact.html" class="btn-contact">Contact Me</a>
             </div>
         </div>
     </nav>
 
-    <div style="
-            border: 1px solid black; 
+    <div>
+        <ul style="display: flex; align-items: center; list-style-type: none;">
+            <li>
+                <div style="    border-radius: 10px ; 
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
+        margin: 100px;
+        background-color: aliceblue;
+        ">
+                    <h1>Hi welcome to My Personal Web</h1>
+                    <p style="text-align: justify; width: 500px;">Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Molestiae, ad quia?
+                        Tempore, aliquam. Consequatur
+                        reprehenderit veritatis quisquam dolorem dignissimos unde tempora possimus repellendus ab
+                        explicabo,
+                        deleniti vel eligendi voluptatum minima!</p>
+                    <br>
+
+
+
+                    <div style="display: flex; text-align: center; gap: 30px;">
+                        <a href="contact.html" class="btn-contact">Contact</a>
+                        <a href="blog.html" style="text-decoration: none; color: black; font-size:16px;">Download CV</a>
+                    </div><br><br>
+
+
+
+                    <div class="media-btn" style="display: flex;">
+                        <a href="#" class="link">
+                            <i class="fa-brands fa-linkedin-in fa-lg"></i>
+                        </a>
+                        <a href="#" class="link">
+                            <i class="fa-brands fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="#" class="link">
+                            <i class="fa-brands fa-facebook-f fa-lg"></i>
+                        </a>
+                        <a href="#" class="link">
+                            <i class="fa-brands fa-twitter fa-lg"></i>
+                        </a>
+                    </div>
+            </li>
+            <li>
+                <div style="
+            border: 1px ; 
             width:350px;
             margin: 90px auto;
-            padding: 20px;
+            background-color: white;
             border-radius: 15px;
+
             ">
 
-        <img style="width: 100%;" src="assets/image/gojo.jpg" alt="gojo image">
-        <h1>Surya Elidanto</h1>
-        <p>I became a superstar to make awesome app and software to bring new life</p>
-
-        <div>
-            <i class="fa-brands fa-linkedin"></i>
-            <i class="fa-brands fa-linkedin fa-xl"></i>
-        </div>
-
-        <p>Dumbways</p>
-
-        <table border="1" style="width: 100%;">
-            <tr>
-                <th>Project Name</th>
-                <th>Year</th>
-            </tr>
-            <tr>
-                <td>Personal Web</td>
-                <td>2023</td>
-            </tr>
-        </table>
+                    <img style="width: 100%; border-radius:  20px;" src="my personal.jpg" alt="gojo image">
+                    <h1 style="text-align: center;">Rezha Akbar Pradana</h1>
+                    <p style="text-align: center; padding-bottom: 20px;">Fullstack Developer</p>
+                </div>
+                <!-- <div class="card-content d-flex justify-content-center mt-2">
+                    <div class="card border border-0" style="width: 100%; text-align: center;">
+                        <img src="my personal.jpg" class="card-img-top" alt="myfoto" style="width: 330px;">
+                        <div class="card-body text-center">
+                            <p class="card-text">
+                            <h2>Rezha Akbar Pradana</h2>
+                            <h3>Fullstack Developer</h3>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    </div> -->
+            </li>
+    </div>
+    </ul>
     </div>
 </body>
 
