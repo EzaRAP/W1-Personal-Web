@@ -13,7 +13,7 @@
 }
 
 .btn-contact {
-    background-color: darkblue;
+    background-color: black;
     color: white;
     padding: 5px;
     width: 75px;
@@ -21,14 +21,6 @@
     text-decoration: none;
     text-align: center;
     border-radius: 10px;
-}
-
-/* .card-style {
-    style="display: grid; 
- align-items: center;
-    margin: 200px;
-    width: 100px; */
-
 }
 
 .profile-card {
