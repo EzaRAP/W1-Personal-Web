@@ -1,0 +1,95 @@
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */
+}
+
+.container {
+    width: 80%;
+    height: 600px;
+    padding: 20ppx;
+    border-radius: 20px;
+    background-color: aqua;
+    /* justify-content: center; */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+}
+
+.container .text-data {
+    width: 450px;
+    background-color: bisque;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 50px;
+}
+
+.contact {
+    background-color: black;
+    margin-top: 20px;
+    padding: 8px;
+    border-radius: 10px;
+    width: 60px;
+}
+
+.contact .contact-btn {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.download {
+    margin-top: 20px;
+}
+
+.cv-btn {
+    text-decoration: none;
+    color: black;
+    margin-top: 20px;
+}
+
+.logo .link {
+    text-decoration: none;
+    background-color: black;
+    margin: 0px 8px;
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}
+
+.profile-image {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.image {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.image .edit-image {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.text {
+    text-align: center;
+}
