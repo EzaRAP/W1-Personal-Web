@@ -42,15 +42,15 @@ function submitBlog(event) {
 
     if (distanceDay > 365) {
         const distanceYear = Math.floor(distanceDay / 365);
-        durationString = `${distanceYear} Tahun yang lalu`;
+        durationString = `${distanceYear} Tahun`;
     } else if (distanceDay > 30) {
         const distanceMonth = Math.floor(distanceDay / 30);
-        durationString = `${distanceMonth} Bulan yang lalu`;
+        durationString = `${distanceMonth} Bulan`;
     } else if (distanceDay > 7) {
         const distanceWeek = Math.floor(distanceDay / 7);
-        durationString = `${distanceWeek} Minggu yang lalu`;
+        durationString = `${distanceWeek} Minggu`;
     } else if (distanceDay > 0) {
-        durationString = `${distanceDay} Hari yang lalu`;
+        durationString = `${distanceDay} Hari`;
     } else {
         durationString = 'Baru saja';
     }

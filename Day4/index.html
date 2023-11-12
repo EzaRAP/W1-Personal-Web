@@ -1,19 +1,18 @@
 <html>
 
 <head>
-    <title>Personal Web</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/index.css" />
+    <title>Creating Blog Page</title>
+    <link rel="stylesheet" href="css/blog.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
+    <!-- NavBar -->
     <nav style="background-color: #f4f3f3; height: 75px;">
         <div style="display: flex; align-items: center; height: 100%; margin-left: 30px; margin-right: 30px;">
             <ul style="display: flex; list-style-type: none; gap: 50px; align-items: center;">
                 <li>
-                    <img src="assets/image/dumbways.png" style="height: 50px;" />
+                    <img src="img/brandred.png" style="height: 50px;" />
                 </li>
                 <li class="nav-link">
                     <a href="index.html">
@@ -32,36 +31,75 @@
         </div>
     </nav>
 
-    <div style="
-            border: 1px solid black; 
-            width:350px;
-            margin: 90px auto;
-            padding: 20px;
-            border-radius: 15px;
-            ">
+    <!-- <button onclick="showMeHelloWorld()">Click me</button>
+    <div id="contents">
+        <p>Hello World</p>
+    </div> -->
 
-        <img style="width: 100%;" src="assets/image/gojo.jpg" alt="gojo image">
-        <h1>Surya Elidanto</h1>
-        <p>I became a superstar to make awesome app and software to bring new life</p>
+    <!-- Blog -->
+    <!-- Form -->
+    <div class="blog">
+        <div class="blog-form">
+            <div class="form-container">
+                <form onsubmit="submitBlog(event)">
+                    <h1>Add My Project</h1>
+                    <div>
+                        <label for="inputTitle">Project Name</label>
+                        <input style="width: 100%;" type="text" id="inputTitle" />
+                    </div>
+                    <div style="display: flex; gap: 20px;">
+                        <div>
+                            <label for="inputStartDate"> Start Date</label>
+                            <input style="width: 100%;" type="date" id="inputStartDate" />
+                        </div>
+                        <div>
+                            <label for="inputEndDate"> end Date</label>
+                            <input style="width: 100%;" type="date" id="inputEndDate" />
+                        </div>
+                    </div>
+                    <div>
+                        <label for="inputContent">Description</label>
+                        <textarea style="width: 100%;" id="inputContent"></textarea>
+                    </div>
 
-        <div>
-            <i class="fa-brands fa-linkedin"></i>
-            <i class="fa-brands fa-linkedin fa-xl"></i>
+                    <div>
+                        <label> Technologies</label><br>
+                        <div style="display: flex; gap: 30px;">
+                            <input type="checkbox" id="inputNodejs" data-image="./img/node.svg">
+                            <label for="inputNodejs"> Node JS</label><br>
+                            <input type="checkbox" id="inputNextjs" data-image="./img/laravel.svg">
+                            <label for="inputNextjs"> Next JS</label><br>
+                        </div>
+                        <div style="display: flex; gap: 28px;">
+                            <input type="checkbox" id="inputReactjs" data-image="./img/react.svg">
+                            <label for="inputReactjs"> React JS</label><br>
+                            <input type="checkbox" id="inputTypescript" data-image="./img/js.svg">
+                            <label for="inputTypescript"> Typescript</label><br>
+                        </div>
+                    </div>
+                    <div>
+                        <label>Upload Image</label>
+                        <div class="input-blog-image-group">
+                            <label for="inputImage">
+                                <p>Attach File</p>
+                                <img src="img/file-logo.png" alt="file" />
+                            </label>
+                            <input type="file" id="inputImage" hidden />
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button>Post Blog</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
-        <p>Dumbways</p>
-
-        <table border="1" style="width: 100%;">
-            <tr>
-                <th>Project Name</th>
-                <th>Year</th>
-            </tr>
-            <tr>
-                <td>Personal Web</td>
-                <td>2023</td>
-            </tr>
-        </table>
+        <hr class="line" />
+        <div id="contents" class="blog-list">
+            <!-- dynamic content would be here -->
+        </div>
     </div>
+    <script src="js/blog.js"></script>
 </body>
 
 </html>
