@@ -118,14 +118,15 @@ select {
 
 /* Blog list */
 .blog .blog-list {
-    margin-top: 80px;
-    margin-bottom: 80px;
+    /* margin-top: 80px;
+    margin-bottom: 80px; */
     margin: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* flex-direction: column; */
     width: 80%;
-    /* background-color: blue; */
+    background-color: blue;
 }
 
 .blog .blog-list .blog-list-item {

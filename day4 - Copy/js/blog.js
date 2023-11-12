@@ -21,17 +21,6 @@ function submitBlog(event) {
     let startDate = document.getElementById("inputStartDate").value;
     let endDate = document.getElementById("inputEndDate").value;
 
-    let selectedImages = [];
-
-    // Loop melalui checkbox untuk mendapatkan gambar yang dipilih
-    document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
-        const imageSrc = checkbox.getAttribute('data-image');
-        selectedImages.push(imageSrc);
-    });
-
-    // Menampilkan gambar yang dipilih
-    console.log("Selected Images", selectedImages);
-
     const startMonth = new Date(startDate);
     const endMonth = new Date(endDate);
     const time = Math.abs(endMonth - startMonth);
@@ -65,13 +54,44 @@ function submitBlog(event) {
         content: inputContent,
         image: inputImage,
         duration: distanceDay,
-        durationString: durationString,
-        checkboxImage: selectedImages
+        durationString: durationString
     }
 
     dataBlog.push(blog)
     console.log("dataBlog", dataBlog)
     renderBlog();
+
+    // const distanceDay = Math.floor(time / 1000 / 60 / 60 / 24);
+
+    // if( distanceDay > 0 ) {
+    //     distanceYear = Math.floor(distanceDay / 365);
+    //     durationString = 'Tahun yang lalu';
+    // } else if (distanceDay > 0) {
+    //     distanceMonth = Math.floor(distanceDay / 30);
+    //     durationString = 'Bulan yang lalu';
+    // } else if (distanceDay > 0) {
+    //     distanceWeek = Math.floor(distanceDay / 7);
+    //     durationString = 'Minggu yang lalu';
+    // } else {
+    //     durationString = 'Hari yang lalu';
+    // }
+
+    // console.log("title", inputTitle);
+    // console.log("content", inputContent);
+    // inputImage = URL.createObjectURL(inputImage[0]);
+    // console.log("image", inputImage);
+
+    // const blog = {
+    //     title: inputTitle,
+    //     content: inputContent,
+    //     image: inputImage,
+    //     duration: distanceDay,
+    //     durationString: durationString
+    // }
+
+    // dataBlog.push(blog)
+    // console.log("dataBlog", dataBlog)
+    // renderBlog();
 
 }
 
@@ -110,25 +130,28 @@ function submitBlog(event) {
 function renderBlog() {
     document.getElementById("contents").innerHTML = ''
     for (let index = 0; index < dataBlog.length; index++) {
-        const imagesHTML = dataBlog[index].checkboxImage.map(image => `<img style="width: 30px; height: 30px; padding-right: 10px;" src="${image}" alt="" />`).join('');
-
         document.getElementById("contents").innerHTML += `
         <div class="blog-list-item">
             <div class="blog-image">
                 <img src="${dataBlog[index].image}" alt="" />
                 <div>
-                    <h4 class="blog-content"><a href="page.html" target="_blank">${dataBlog[index].title}</a></h4>
-                    <span class="blog-content">
-                        Durasi: ${dataBlog[index].durationString}
-                    </span>
+                <h4 class="blog-content">
+                    <a href="page.html" target="_blank">${dataBlog[index].title}</a>
+                </h4>
+                <span class="blog-content">
+                  Durasi: ${dataBlog[index].durationString}
+                </span>
                 <div>
-                <p class="detail-blog-content">${dataBlog[index].content}</p>
+                <p class="detail-blog-content">
+                ${dataBlog[index].content}
+              </p>
+                </div>
             </div>
-        </div>
-            ${imagesHTML}
-            <div class="btn-group">
-                <button class="btn-edit">Edit Post</button>
-                <button class="btn-post">Delete Post</button>
+            
+                <div class="btn-group">
+                    <button class="btn-edit">Edit Post</button>
+                    <button class="btn-post">Delete Post</button>
+                </div>
             </div>
         </div>`
     }

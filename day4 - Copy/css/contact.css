@@ -68,11 +68,12 @@
     border-radius: 10px;
 }
 
-/* page html */
 .post-blog {
     display: flex;
     flex-direction: column;
     width: 80%;
+    /* height: 100%; */
+    /* background-color: aqua; */
     margin: 20px auto;
 }
 
