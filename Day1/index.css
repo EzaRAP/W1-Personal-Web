@@ -8,29 +8,28 @@ body {
 
 .container {
     width: 80%;
-    height: 600px;
-    padding: 20ppx;
+    height: 100%;
     border-radius: 20px;
-    background-color: aqua;
-    /* justify-content: center; */
-    align-items: center;
-    display: flex;
-    flex-direction: column;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .container .text-data {
     width: 450px;
-    background-color: bisque;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
-    margin-top: 50px;
+    text-align: justify;
+    /* background-color: aqua; */
+    margin-top: 40px;
+    font-family: sans-serif;
 }
 
 .contact {
     background-color: black;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 8px;
     border-radius: 10px;
     width: 60px;
@@ -45,13 +44,12 @@ body {
 }
 
 .download {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .cv-btn {
     text-decoration: none;
     color: black;
-    margin-top: 20px;
 }
 
 .logo .link {
@@ -65,31 +63,25 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 20px;
-}
-
-.profile-image {
-    background-color: aqua;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    font-size: 18px;
 }
 
 .image {
-    position: relative;
-    width: 450px;
-    height: 450px;
+    width: 350px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* background-color: aqua; */
+    margin-bottom: 30px;
+    border-radius: 10px;
 }
 
-.image .edit-image {
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
+.edit-image {
+    width: 100%;
+
     border-radius: 10px;
 }
 
 .text {
     text-align: center;
+    margin: 5px;
+
 }

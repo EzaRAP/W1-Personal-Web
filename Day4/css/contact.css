@@ -9,18 +9,21 @@
 
 /* Navbar */
 .btn-contact {
-    background-color: orangered;
+    background-color: black;
     color: white;
     padding: 10px;
-    width: 130px;
-    font-size: 20px;
+    width: 90px;
+    font-size: 14px;
     border-radius: 10px;
     text-decoration: none;
     text-align: center;
 }
 
 .nav-link {
-    font-size: 25px;
+    font-size: 18px;
+    width: 130px;
+    text-align: center;
+    /* background-color: aqua; */
 }
 
 .nav-link a {
@@ -63,4 +66,28 @@
     padding: 10px;
     width: 100px;
     border-radius: 10px;
+}
+
+.post-blog {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    /* height: 100%; */
+    /* background-color: aqua; */
+    margin: 20px auto;
+}
+
+.text-blog {
+    text-align: center;
+}
+
+.img-post-blog {
+    width: 500px;
+    margin-top: 30px;
+}
+
+.paragraf-blog {
+    text-align: justify;
+    font-family: sans-serif;
+    font-weight: 400;
 }

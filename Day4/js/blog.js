@@ -9,46 +9,90 @@
 
 // DO WHILE -> perulangan yang jalan dulu sekali, baru dicek
 
+
 let dataBlog = []
 
 function submitBlog(event) {
     event.preventDefault()
 
-    let inputTitle = document.getElementById("inputTitle").value
-    let inputContent = document.getElementById("inputContent").value
-    let inputImage = document.getElementById("inputImage").files
-    let inputDate = document.getElementById("inputDate").value
-    let endDate = document.getElementById("endDate").value
-    let inputNodejs = document.getElementById("inputNodejs").value
-    // let
-    // let
-    // let
+    let inputTitle = document.getElementById("inputTitle").value;
+    let inputContent = document.getElementById("inputContent").value;
+    let inputImage = document.getElementById("inputImage").files;
+    let startDate = document.getElementById("inputStartDate").value;
+    let endDate = document.getElementById("inputEndDate").value;
 
+    const startMonth = new Date(startDate);
+    const endMonth = new Date(endDate);
+    const time = Math.abs(endMonth - startMonth);
 
+    const distanceDay = Math.floor(time / (1000 * 60 * 60 * 24));
 
-    console.log("title", inputTitle)
-    console.log("content", inputContent)
-    console.log("waktu", inputDate)
-    console.log("waktuSelesai", endDate)
-    console.log("nodejs", inputNodejs)
-    inputImage = URL.createObjectURL(inputImage[0])
-    console.log("image", inputImage)
+    let durationString;
+
+    if (distanceDay > 365) {
+        const distanceYear = Math.floor(distanceDay / 365);
+        durationString = `${distanceYear} Tahun yang lalu`;
+    } else if (distanceDay > 30) {
+        const distanceMonth = Math.floor(distanceDay / 30);
+        durationString = `${distanceMonth} Bulan yang lalu`;
+    } else if (distanceDay > 7) {
+        const distanceWeek = Math.floor(distanceDay / 7);
+        durationString = `${distanceWeek} Minggu yang lalu`;
+    } else if (distanceDay > 0) {
+        durationString = `${distanceDay} Hari yang lalu`;
+    } else {
+        durationString = 'Baru saja';
+    }
+
+    console.log("title", inputTitle);
+    console.log("content", inputContent);
+    inputImage = URL.createObjectURL(inputImage[0]);
+    console.log("image", inputImage);
 
     const blog = {
         title: inputTitle,
         content: inputContent,
         image: inputImage,
-        waktu: inputDate,
-        waktuSelesai: endDate,
-        nodejs: inputNodejs
-        // nextjs: inputNextjs,
-        // reactjs: inputReactjs,
-        // typescript: inputTypescript
+        duration: distanceDay,
+        durationString: durationString
     }
 
     dataBlog.push(blog)
     console.log("dataBlog", dataBlog)
-    renderBlog()
+    renderBlog();
+
+    // const distanceDay = Math.floor(time / 1000 / 60 / 60 / 24);
+
+    // if( distanceDay > 0 ) {
+    //     distanceYear = Math.floor(distanceDay / 365);
+    //     durationString = 'Tahun yang lalu';
+    // } else if (distanceDay > 0) {
+    //     distanceMonth = Math.floor(distanceDay / 30);
+    //     durationString = 'Bulan yang lalu';
+    // } else if (distanceDay > 0) {
+    //     distanceWeek = Math.floor(distanceDay / 7);
+    //     durationString = 'Minggu yang lalu';
+    // } else {
+    //     durationString = 'Hari yang lalu';
+    // }
+
+    // console.log("title", inputTitle);
+    // console.log("content", inputContent);
+    // inputImage = URL.createObjectURL(inputImage[0]);
+    // console.log("image", inputImage);
+
+    // const blog = {
+    //     title: inputTitle,
+    //     content: inputContent,
+    //     image: inputImage,
+    //     duration: distanceDay,
+    //     durationString: durationString
+    // }
+
+    // dataBlog.push(blog)
+    // console.log("dataBlog", dataBlog)
+    // renderBlog();
+
 }
 
 // function showMeHelloWorld() {
@@ -90,24 +134,24 @@ function renderBlog() {
         <div class="blog-list-item">
             <div class="blog-image">
                 <img src="${dataBlog[index].image}" alt="" />
+                <div>
+                <h4 class="blog-content">
+                    <a href="page.html" target="_blank">${dataBlog[index].title}</a>
+                </h4>
+                <span class="blog-content">
+                  Durasi: ${dataBlog[index].durationString}
+                </span>
+                <div>
+                <p class="detail-blog-content">
+                ${dataBlog[index].content}
+              </p>
+                </div>
             </div>
-            <div class="blog-content">
+            
                 <div class="btn-group">
                     <button class="btn-edit">Edit Post</button>
                     <button class="btn-post">Delete Post</button>
                 </div>
-                <h1>
-                    <a href="blog-detail.html" target="_blank">${dataBlog[index].title}</a>
-                </h1>
-                <div class="detail-blog-content">
-                    ${dataBlog[index].waktu} s/d ${dataBlog[index].waktuSelesai}
-                </div>
-                <p>
-                   ${dataBlog[index].content}
-                </p>
-                <p>
-                   ${dataBlog[index].nodejs}
-                </p>
             </div>
         </div>`
     }
