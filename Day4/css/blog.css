@@ -122,6 +122,7 @@ select {
     margin-bottom: 80px;
     margin: 100px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     width: 80%;
