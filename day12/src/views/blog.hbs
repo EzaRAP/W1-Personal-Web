@@ -50,42 +50,44 @@
         </div>
     </nav>
 
-    <div class="container d-flex flex-column">
-        <div class="w-100 d-flex justify-content-end mb-3">
+
+    <div class="container ">
+        <div class="w-100 d-flex justify-content-end mb-3 mt-3">
             <a href="/add-blog" class="btn btn-primary">Add New Blog</a>
         </div>
-        <div id="contents">
+        <div id="contents" class="d-flex flex-wrap w-100 gap-4">
             {{#each data}}
             <div class="card mb-3 w-100">
                 <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="/assets/img/hacker.jpeg" class="img-fluid rounded-start" alt="foto">
+                    <div class="col-md-3">
+                        <img src="/assets/img/hacker.jpeg" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
                             <h5 class="card-title">
                                 <a href="/blog-detail" target="_blank">{{this.title}}</a>
                             </h5>
-                            <p>
-                                12 Juli 2021 22:30 WIB | Rezha Akbar Pradana
-                            </p>
+                            <p class="card-text"><small class="text-body-secondary">Date : {{this.startDate}} s/d
+                                    {{this.endDate}} </small></p>
+
                             <p class="card-text">{{this.content}}</p>
-                            <p class="card-text"><small class="text-body-secondary">1 seconds ago
-                                </small></p>
+                            {{!-- <p class="card-text"><small class="text-body-secondary">1 seconds ago
+                                </small></p> --}}
                         </div>
                     </div>
-                    <div class="col-md-2 d-flex" style="height: fit-content;">
-                        <button class="btn btn-secondary">Edit post</button>
-                        <button class="btn btn-primary">Delete post</button>
+                    <div class="col-md-3 mt-3 d-flex gap-3" style="height: fit-content;">
+                        <a href="/update-blog/{{@index}}" class="btn btn-secondary">Edit post</a>
+                        <form method="post" action="/delete-blog/{{@index}}">
+                            <button class="btn btn-primary">Delete post</button>
+                        </form>
                     </div>
                 </div>
             </div>
             {{/each}}
         </div>
-    </div>
 
-    {{!--
-    <script src="/assets/js/bootstrap.bundle.min.js"></script> --}}
+        {{!--
+        <script src="/assets/js/bootstrap.bundle.min.js"></script> --}}
 </body>
 
 </html>

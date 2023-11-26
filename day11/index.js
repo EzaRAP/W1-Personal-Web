@@ -7,10 +7,12 @@ app.set("view engine", "hbs")
 app.set("views", path.join(__dirname, 'src/views'))
 
 app.use('/assets', express.static('src/assets'))
+app.use(express.urlencoded({ extended: false }))
 
 app.get('/', home)
 app.get('/blog', blog)
-app.get('/add-blog', addBlog)
+app.get('/add-blog', addBlogView)
+app.post('/add-blog', addBlog)
 app.get('/blog-detail', blogDetail)
 app.get('/testimonial', testimonial)
 app.get('/contact', contact)
@@ -20,15 +22,49 @@ function home(req, res) {
 }
 
 function blog(req, res) {
-    res.render('blog')
+    const data = [
+        {
+            title: "Title 1",
+            content: "Content 1"
+        },
+        {
+            title: "Title 2",
+            content: "Content 2"
+        }
+    ]
+
+    res.render('blog', { data })
 }
 
-function addBlog(req, res) {
+function addBlogView(req, res) {
     res.render('add-blog')
 }
 
+function addBlog(req, res) {
+    const { title, startDate, endDate, content } = req.body
+
+    console.log("title :", title)
+    console.log("start Date :", startDate)
+    console.log("end Date :", endDate)
+    console.log("content :", content)
+
+    res.redirect('blog')
+}
+
 function blogDetail(req, res) {
-    res.render('blog-detail')
+    // const { id } = req.params // destructuring
+
+    const id = "1"
+    const title = "Title 1"
+    const content = "Content 1"
+
+    const data = {
+        id,
+        title,
+        content
+    }
+
+    res.render('blog-detail', { data })
 }
 
 function testimonial(req, res) {

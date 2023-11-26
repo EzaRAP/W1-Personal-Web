@@ -1,20 +1,13 @@
-<!doctype html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Create post blog</title>
+    <title>Contact Me</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
-
         .btn-primary {
             background-color: orangered !important;
         }
@@ -50,42 +43,40 @@
         </div>
     </nav>
 
-    <div class="container d-flex flex-column">
-        <div class="w-100 d-flex justify-content-end mb-3">
-            <a href="/add-blog" class="btn btn-primary">Add New Blog</a>
-        </div>
-        <div id="contents">
-            {{#each data}}
-            <div class="card mb-3 w-100">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="/assets/img/hacker.jpeg" class="img-fluid rounded-start" alt="foto">
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <a href="/blog-detail" target="_blank">{{this.title}}</a>
-                            </h5>
-                            <p>
-                                12 Juli 2021 22:30 WIB | Rezha Akbar Pradana
-                            </p>
-                            <p class="card-text">{{this.content}}</p>
-                            <p class="card-text"><small class="text-body-secondary">1 seconds ago
-                                </small></p>
-                        </div>
-                    </div>
-                    <div class="col-md-2 d-flex" style="height: fit-content;">
-                        <button class="btn btn-secondary">Edit post</button>
-                        <button class="btn btn-primary">Delete post</button>
-                    </div>
-                </div>
+    <div class="d-flex mt-5 justify-content-center">
+        <div class="d-flex flex-column w-50 fw-medium">
+            <div class="mb-3">
+                <label for="inputName" class="form-label">Name</label>
+                <input type="text" class="form-control " id="inputName" placeholder="ex. Rangga">
             </div>
-            {{/each}}
+            <div class="mb-3">
+                <label for="inputEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="ex. name@gmail.com">
+            </div>
+            <div class="mb-3">
+                <label for="inputPhone" class="form-label">Phone Number</label>
+                <input type="number" class="form-control" id="inputPhone" placeholder="ex. 0812345678">
+            </div>
+            <div class="mb-3">
+                <label for="inputSubject" class="form-label">Subject</label>
+                <select class="form-select" aria-label="Default select example" id="inputSubject">
+                    <option></option>
+                    <option value="1">Fullstack Developer</option>
+                    <option value="2">Frontend Developer</option>
+                    <option value="3">Backend Developer</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="inputMessage" class="form-label">Message</label>
+                <textarea class="form-control" id="inputMessage" rows="3"></textarea>
+            </div>
+            <input type="button" value="Submit" class="submit-contact w-25 " onclick="submitData()" />
         </div>
     </div>
 
-    {{!--
-    <script src="/assets/js/bootstrap.bundle.min.js"></script> --}}
+    <script src="/assets/js/contact.js"></script>
+    <!-- <script src="js/nav.js"></script> -->
+
 </body>
 
 </html>
