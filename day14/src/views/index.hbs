@@ -97,20 +97,20 @@
                 <img src="/assets/img/{{this.image}}" class="card-img-top object-fit-cover h-100" alt="image">
                 <div class="my-3">
                     <h6 class="card-title">
-                        <a href="/blog-detail">{{this.project_name}}</a>
+                        <a href="/blog-detail/{{this.id}}">{{this.title}}</a>
                     </h6>
-                    <p class="card-text"><small class="text-body-secondary">Date : {{this.start_date}} s/d
-                            {{this.end_date}} </small></p>
+                    <p class="card-text"><small class="text-body-secondary">Date : {{this.startDate}} s/d
+                            {{this.endDate}} </small></p>
                 </div>
                 <div class="mb-3">
-                    <p class="card-text">{{this.description}}</p>
+                    <p class="card-text">{{this.content}}</p>
                 </div>
                 {{!-- <div class="mb-3 " style="width: 30px; height: 30px; padding-right: 10px;">
                     <p class="card-text"> ICON Technologies</p>
                 </div> --}}
                 <div class="col-md-12 d-flex gap-3 justify-content-center">
-                    <a href="/update-blog/{{@index}}" class="btn btn-secondary">Edit post</a>
-                    <form method="post" action="/delete-blog/{{@index}}">
+                    <a href="/update-blog/{{this.id}}" class="btn btn-secondary">Edit post</a>
+                    <form method="post" action="/delete-blog/{{this.id}}">
                         <button class="btn btn-primary">Delete post</button>
                     </form>
                 </div>

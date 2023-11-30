@@ -30,7 +30,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand fs-4" href="/">Home</a>
+                        <a class="navbar-brand fs-4 fw-bold" href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="navbar-brand fs-4" href="/blog">Blog</a>
@@ -39,15 +39,31 @@
                         <a class="navbar-brand fs-4" href="/testimonial">Testimonial</a>
                     </li>
                 </ul>
-                <a class="btn btn-primary rounded border-0" href="/contact" role="button">Contact Me</a>
+
+                {{#if isLogin}}
+                <h4 class="mb-lg-0 pe-3">Welcome back, {{user.name}}</h4>
+                {{else }}
+                <a class="navbar-brand ms-2" href="/register">Register</a>
+                <a class="navbar-brand ms-2" href="/login">Login</a>
+                {{/if}}
+                <a class="btn btn-primary rounded border-0 ms-2" href="/contact" role="button">Contact Me</a>
             </div>
         </div>
     </nav>
+
+    {{#if messages.success}}
+    <div class="alert alert-success" role="alert">
+        <div class="container">
+            {{messages.success}}
+        </div>
+    </div>
+    {{/if}}
 
     <div class="card-home">
         <ul class="card-home-ul">
             <li>
                 <div class="card-content">
+
                     <h1>Hi welcome to My Personal Web</h1>
                     <p style="text-align: justify; width: 500px;">Hello! nama saya Rezha Akbar Pradana biasa di panggil
                         Rezha. umur saya 22 tahun. saya merupakan lulusan
@@ -97,20 +113,20 @@
                 <img src="/assets/img/{{this.image}}" class="card-img-top object-fit-cover h-100" alt="image">
                 <div class="my-3">
                     <h6 class="card-title">
-                        <a href="/blog-detail">{{this.project_name}}</a>
+                        <a href="/blog-detail/{{this.id}}">{{this.title}}</a>
                     </h6>
-                    <p class="card-text"><small class="text-body-secondary">Date : {{this.start_date}} s/d
-                            {{this.end_date}} </small></p>
+                    <p class="card-text"><small class="text-body-secondary">Date : {{this.startDate}} s/d
+                            {{this.endDate}} </small></p>
                 </div>
                 <div class="mb-3">
-                    <p class="card-text">{{this.description}}</p>
+                    <p class="card-text">{{this.content}}</p>
                 </div>
                 {{!-- <div class="mb-3 " style="width: 30px; height: 30px; padding-right: 10px;">
                     <p class="card-text"> ICON Technologies</p>
                 </div> --}}
                 <div class="col-md-12 d-flex gap-3 justify-content-center">
-                    <a href="/update-blog/{{@index}}" class="btn btn-secondary">Edit post</a>
-                    <form method="post" action="/delete-blog/{{@index}}">
+                    <a href="/update-blog/{{this.id}}" class="btn btn-secondary">Edit post</a>
+                    <form method="post" action="/delete-blog/{{this.id}}">
                         <button class="btn btn-primary">Delete post</button>
                     </form>
                 </div>
