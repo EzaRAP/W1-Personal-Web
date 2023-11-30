@@ -18,8 +18,9 @@ module.exports = (sequelize, DataTypes) => {
     startDate: DataTypes.DATE,
     endDate: DataTypes.DATE,
     content: DataTypes.STRING,
-    technologies: DataTypes.STRING,
-    image: DataTypes.STRING
+    technologies: DataTypes.ARRAY(DataTypes.STRING),
+    image: DataTypes.STRING,
+    authorId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'project',

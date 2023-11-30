@@ -8,12 +8,14 @@ const sequelize = new Sequelize(config.development)
 const bcrypt = require('bcrypt')
 const session = require('express-session')
 const flash = require('express-flash')
+const upload = require('./src/middlewares/uploadFile')
 
 
 app.set("view engine", "hbs")
 app.set("views", path.join(__dirname, 'src/views'))
 
 app.use('/assets', express.static('src/assets'))
+app.use('/uploads', express.static('src/uploads'))
 app.use(express.urlencoded({ extended: false }))
 app.use(flash())
 app.use(session({
@@ -31,7 +33,7 @@ app.get('/', home)
 app.get('/blog', blog)
 
 app.get('/add-blog', addBlogView)
-app.post('/add-blog', addBlog)
+app.post('/add-blog', upload.single("image"), addBlog)
 
 app.post('/delete-blog/:id', deleteBlog)
 
@@ -53,7 +55,11 @@ const data = [
 ]
 
 async function home(req, res) {
-    const query = 'SELECT * FROM projects'
+    const query = `SELECT projects.id, projects.title, projects."startDate",
+    projects."endDate", projects.content, projects.technologies,
+    projects.image, projects."authorId", registers.name,
+    registers.email FROM projects INNER JOIN registers ON
+    projects."authorId" = registers.id`
     const obj = await sequelize.query(query, { type: QueryTypes.SELECT })
     // console.log('ini data dari database', obj)
 
@@ -63,7 +69,11 @@ async function home(req, res) {
 }
 
 async function blog(req, res) {
-    const query = 'SELECT * FROM projects'
+    const query = `SELECT projects.id, projects.title, projects."startDate",
+    projects."endDate", projects.content, projects.technologies,
+    projects.image, projects."authorId", registers.name,
+    registers.email FROM projects INNER JOIN registers ON
+    projects."authorId" = registers.id`
     const obj = await sequelize.query(query, { type: QueryTypes.SELECT })
     // console.log('ini data dari database', obj)
 
@@ -80,14 +90,17 @@ function addBlogView(req, res) {
 
 async function addBlog(req, res) {
     const { title, content, startDate, endDate } = req.body
-    const image = "cat.jpeg"
-    const isLogin = req.session.isLogin
 
+    const image = req.file.filename
+    const authorId = req.session.user.id
+
+    const isLogin = req.session.isLogin
     if (!isLogin) {
         return res.redirect('/login')
     }
 
-    const query = `INSERT INTO projects(title, content, image, "startDate", "endDate") VALUES ('${title}','${content}','${image}', '${startDate}', '${endDate}')`
+    const query = `INSERT INTO projects(title, content, image, "startDate", "endDate", "authorId") 
+    VALUES ('${title}','${content}','${image}', '${startDate}', '${endDate}', '${authorId}')`
     const obj = await sequelize.query(query, { type: QueryTypes.INSERT })
 
     console.log("data berhasil di insert", obj)
@@ -145,7 +158,11 @@ async function updateBlog(req, res) {
 async function blogDetail(req, res) {
     const { id } = req.params // destructuring
 
-    const query = `SELECT * FROM projects WHERE id=${id}`
+    const query = `SELECT projects.id, projects.title, projects."startDate",
+    projects."endDate", projects.content, projects.technologies,
+    projects.image, projects."authorId", registers.name,
+    registers.email FROM projects LEFT JOIN registers ON
+    projects."authorId" = registers.id WHERE projects.id=${id}`
     const obj = await sequelize.query(query, { type: QueryTypes.SELECT })
     // console.log('ini data dari database', obj)
 
@@ -210,6 +227,7 @@ async function login(req, res) {
 
         req.session.isLogin = true
         req.session.user = {
+            id: obj[0].id,
             name: obj[0].name,
             email: obj[0].email
         }

@@ -65,7 +65,7 @@
             <div class="card mb-3 w-100">
                 <div class="row g-0">
                     <div class="col-md-3">
-                        <img src="/assets/img/{{this.image}}" class="img-fluid rounded-start" alt="...">
+                        <img src="/uploads/{{this.image}}" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
@@ -74,6 +74,9 @@
                             </h5>
                             <p class="card-text"><small class="text-body-secondary">Date : {{this.startDate}} s/d
                                     {{this.endDate}} </small></p>
+                            <p>
+                                Author : {{this.name}}
+                            </p>
 
                             <p class="card-text">{{this.content}}</p>
                             {{!-- <p class="card-text"><small class="text-body-secondary">1 seconds ago

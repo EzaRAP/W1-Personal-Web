@@ -80,7 +80,7 @@ function addBlogView(req, res) {
 
 async function addBlog(req, res) {
     const { title, content, startDate, endDate } = req.body
-    const image = "cat.jpeg"
+    const image = "pegang hp.jpg"
     const isLogin = req.session.isLogin
 
     if (!isLogin) {

@@ -22,10 +22,17 @@ module.exports = {
         type: Sequelize.STRING
       },
       technologies: {
-        type: Sequelize.STRING
+        type: Sequelize.ARRAY(Sequelize.STRING)
       },
       image: {
         type: Sequelize.STRING
+      },
+      authorId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "registers",
+          key: "id"
+        }
       },
       createdAt: {
         allowNull: false,
@@ -41,4 +48,3 @@ module.exports = {
     await queryInterface.dropTable('projects');
   }
 };
-
