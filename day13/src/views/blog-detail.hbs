@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Post Blog</title>
+
+</head>
+
+<body>
+    <nav style="background-color: #f4f3f3; height: 75px;">
+        <div style=" display: flex; align-items: center; height: 100%; margin-left: 30px; margin-right: 30px;">
+            <ul style="display: flex; list-style-type: none; gap: 40px; align-items: center;">
+                <li>
+                    <img src="/assets/img/brandred.png" style="height: 50px;" />
+                </li>
+                <li class="nav-link" style="width: 150px;">
+                    <a href="/blog">
+                        Add Blog
+                    </a>
+                </li>
+                <li class="nav-link page" style="width: 150px;">
+                    <a href="/blog-detail">
+                        My Project
+                    </a>
+                </li>
+            </ul>
+            <div style="display: flex; width: 100%; justify-content: end;">
+                <a href="/contact" class="btn-contact">Contact me</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="post-blog">
+        <h1 class="text-blog"> {{data.id}} | {{data.title}}</h1>
+        <div style="display: flex;">
+            <img src="/assets/img/pegang hp.jpg" alt="foto" class="img-post-blog">
+            <div style="display: flex; flex-direction: column; width: 40%; margin-top: 30px;">
+                <h4 style="margin-left: 50px; margin-top: 10px;">Duration</h4>
+                <div style="display: flex;margin-top: 10px; margin-left: 30px; align-items: center;">
+                    <i class="fa-regular fa-calendar-days" style="margin-right: 10px;"></i>
+                    <span> 12 Nov 2023 - 15 Des 2023</span>
+                </div>
+                <div style="display: flex;margin-top: 10px; margin-left: 30px; align-items: center;">
+                    <i class="fa-regular fa-clock" style="margin-right: 10px;"></i>
+                    <span> 1 Month</span>
+                </div>
+                <h4 style="margin-left: 50px; margin-top: 40px;">Technologies</h4>
+                <div style="display: flex;margin-top: 10px; margin-left: 30px; align-items: center;">
+                    <i class="fa-brands fa-react" style="margin-right: 10px;"></i>
+                    <span style="margin-right: 50px;"> React JS</span>
+                    <i class="fa-brands fa-square-js" style="margin-right: 10px;"></i>
+                    <span style="margin-right: 50px;"> Java Script</span>
+                </div>
+                <div style="display: flex;margin-top: 10px; margin-left: 30px; align-items: center;">
+                    <i class="fa-brands fa-node-js" style="margin-right: 10px;"></i>
+                    <span style="margin-right: 50px;"> Node JS</span>
+                    <i class="fa-brands fa-golang" style="margin-right: 10px;"></i>
+                    <span style="margin-right: 50px;"> Golang</span>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 30px;">
+            <p class="paragraf-blog">{{data.content}}</p>
+            <p class="paragraf-blog">Dengan teknologi web yang berkembang, sekarang hampir segalanya yang diperlukan
+                untuk membuat website yang modern dan responsif mudah digunakan. Beberapa di antaranya adalah
+                JavaScript, HTML5 dan CSS. JavaScript, yang digunakan untuk menambahkan
+                interaktivitas dan fitur dinamis ke website, sekarang telah menjadi standar dari pengembangan web.
+                HTML5 memungkinkan untuk membuat file HTML yang tepat dan lebih sederhana dan mendukung media seperti
+                video dan audio. CSS, atau Hoja de Estilo en Cascada, digunakan untuk membuat presensi desain yang bagus
+                dan memungkinkan
+                untuk memisahkan konten web dari desain dan memberikan pengembang web kemampuan untuk membuat website
+                yang fleksibel, responsif dan tepat. </p>
+            <p class="paragraf-blog">
+                Sekarang ini, semakin banyak pengembang web yang menggunakan berbagai macam teknologi untuk meningkatkan
+                website mereka. Salah satu cara untuk melakukannya adalah dengan menggunakan modul web seperti jQuery
+                dan Bootstrap. jQuery memungkinkan untuk membuat berbagai macam fungsi interaktif dan saat ini sangat
+                populer di kalangan pengembang web. Bootstrap, pada gilirannya, adalah framework CSS yang dapat
+                digunakan untuk membangun website dengan
+                lebih cepat. Framework seperti Materialize juga memungkinkan untuk membuat website dengan gaya Material
+                Design yang sangat modern. Dalam beberapa dekade mendatang, teknologi web berkembang lebih cepat. Dengan
+                semakin banyak perangkat
+                yang digunakan, teknologi web semakin berkembang di berbagai bidang. Teknologi cloud juga menjadi lebih
+                populer karena memungkinkan orang untuk dengan mudah menyimpan dan berbagi data online.
+            </p>
+            <p class="paragraf-blog">Teknologi seperti GraphQL juga sedang berkembang dengan cepat dan menawarkan
+                berbagai manfaat termasuk fleksibilitas dan efisiensi pengembangan. Ada juga hypermedia protocol seperti
+                HAL, yang memungkinkan untuk membuat API yang sangat fleksibel dan mudah dikonfigurasi.React, sebuah
+                library JavaScript yang dikembangkan oleh Facebook dan Instagram, dapat menjadi contoh
+                yang baik. library ini sangat populer karena menghilangkan library server-side, dan pengembang web dapat
+                dengan mudah menggunakannya untuk membangun sebuah aplikasi yang modern dan responsif.
+            </p>
+        </div>
+    </div>
+
+
+    </div>
+
+</body>
+
+</html>

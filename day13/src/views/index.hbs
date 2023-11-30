@@ -33,7 +33,7 @@
                         <a class="navbar-brand fs-4" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand fs-4" href="/blog">Add Project</a>
+                        <a class="navbar-brand fs-4" href="/blog">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="navbar-brand fs-4" href="/testimonial">Testimonial</a>
@@ -47,7 +47,7 @@
     <div class="card-home">
         <ul class="card-home-ul">
             <li>
-                <div class="card-text">
+                <div class="card-content">
                     <h1>Hi welcome to My Personal Web</h1>
                     <p style="text-align: justify; width: 500px;">Hello! nama saya Rezha Akbar Pradana biasa di panggil
                         Rezha. umur saya 22 tahun. saya merupakan lulusan
@@ -90,8 +90,38 @@
     </ul>
     </div>
 
+    <div class="container ">
+        <div id="contents" class="d-flex flex-wrap w-100 gap-4">
+            {{#each data}}
+            <div class="card shadow p-2 mb-5 bg-body-tertiary rounded border-0  " style="width: 17rem;">
+                <img src="/assets/img/{{this.image}}" class="card-img-top object-fit-cover h-100" alt="image">
+                <div class="my-3">
+                    <h6 class="card-title">
+                        <a href="/blog-detail">{{this.name}}</a>
+                    </h6>
+                    <p class="card-text"><small class="text-body-secondary">Date : {{this.start_date}} s/d
+                            {{this.end_date}} </small></p>
+                </div>
+                <div class="mb-3">
+                    <p class="card-text">{{this.description}}</p>
+                </div>
+                {{!-- <div class="mb-3 " style="width: 30px; height: 30px; padding-right: 10px;">
+                    <p class="card-text"> ICON Technologies</p>
+                </div> --}}
+                <div class="col-md-12 d-flex gap-3 justify-content-center">
+                    <a href="/update-blog/{{@index}}" class="btn btn-secondary">Edit post</a>
+                    <form method="post" action="/delete-blog/{{@index}}">
+                        <button class="btn btn-primary">Delete post</button>
+                    </form>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
     <!-- script -->
-    <script src="/assets/js/nav.js"></script>
+    {{!--
+    <script src="/assets/js/nav.js"></script> --}}
 </body>
 
 </html>
